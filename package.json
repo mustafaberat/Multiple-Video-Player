@@ -1,5 +1,5 @@
 {
-  "name": "@dongido/vue-viaudio",
+  "name": "yayincim",
   "version": "0.3.5",
   "homepage": "https://github.com/dongido001/vue-viaudio",
   "main": "./dist/vue-viaudio.umd.js",
@@ -24,13 +24,13 @@
     "HTML5",
     "media"
   ],
-  "bugs": "https://github.com/dongido001/vue-viaudio/issues",
-  "author": "Onwuka Gideon",
+  "bugs": "",
+  "author": "Mustafa Berat ARU",
   "license": "ISC",
   "description": "A package that helps you dynamically/reactively render video and audio elements in Vue.js",
   "repository": {
     "type": "svn",
-    "url": "https://github.com/dongido001/vue-viaudio"
+    "url": ""
   },
   "scripts": {
     "serve": "vue-cli-service serve",

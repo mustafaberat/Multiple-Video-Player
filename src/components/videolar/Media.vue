@@ -40,6 +40,7 @@
         required: false
       },
       src: {
+        // eslint-disable-next-line vue/require-prop-type-constructor
         type: String | Array,
         required: false
       },

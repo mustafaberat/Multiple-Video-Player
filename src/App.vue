@@ -1,21 +1,36 @@
 <template>
   <div id="app">
     <div class="login" v-if="!input.logedIn">
-      <h1>Infos:</h1>
-      <input type="text" name="username" v-model="input.usernameIn" placeholder="Username" />
+      <h1>Bilgiler:</h1>
+      <input
+        type="text"
+        name="username"
+        v-model="input.usernameIn"
+        placeholder="Kullanici Adi"
+      />
       <input type="password" name="password" v-model="input.passwordIn" />
-      <button type="button" v-on:click="check()">Login</button>
+      <button class="loginbtn" type="button" v-on:click="check()">
+        Giris Yap
+      </button>
     </div>
+
     <div class="videoYeri" v-if="input.logedIn">
       <h1>Yayin Gösterme Sayfası</h1>
-      <input type="text" name="link" v-model="input.tempLink" placeholder="Yayin Linki - Simdilik default link kullanilir"/>
-      <button v-on:click="ekle()">Ekle</button>
 
-      <div v-for="yayin in input.yayinlar" :key="yayin.link" >
-          <Video />
-          <button v-on:click="sil()" class="kapatbtn">Kapat</button>
+      <div class="eklemeyeri">
+        <input
+          type="text"
+          name="link"
+          v-model="input.tempLink"
+          placeholder="Yayin Linki"
+        />
+        <button v-on:click="ekle()">Ekle</button>
       </div>
-      
+
+      <div v-for="yayin in input.yayinlar" :key="yayin.link">
+        <Video />
+        <button v-on:click="sil()" class="kapatbtn">Kapat</button>
+      </div>
     </div>
   </div>
 </template>
@@ -71,12 +86,12 @@ export default {
     },
 
     sil() {
-    if (this.input.yayinlar.length > 0) {
-      this.input.yayinlar.shift();
-    } else {
-      alert("Silinecek video yok");
-    }
-  },
+      if (this.input.yayinlar.length > 0) {
+        this.input.yayinlar.shift();
+      } else {
+        alert("Silinecek video yok");
+      }
+    },
   },
 };
 </script>
@@ -97,13 +112,53 @@ export default {
   background-color: #ffffff;
   margin: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
-input {
+input,
+button {
   margin: 5px;
+  font-size: 22px;
+  width: 80%;
+  display: block;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #eee;
+  color: #333;
+  border-radius: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+input:focus {
+  outline: 0;
+  border-color: #333;
 }
 
-.kapatbtn{
+button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.kapatbtn {
   margin-bottom: 40px;
+  width: 100%;
+}
+
+.eklemeyeri {
+  width: 80%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.eklemeyeri button {
+  width: 20%;
 }
 </style>

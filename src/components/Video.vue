@@ -2,7 +2,7 @@
   <div class="video">
     <Media 
       :kind="'video'"
-      :src="['http://media.w3.org/2010/05/sintel/trailer.mp4']"
+      :src="'http://media.w3.org/2010/05/sintel/trailer.mp4'"
       :poster="'https://www.freeiconspng.com/uploads/video-icon-0.jpg'"
       :autoplay="true"
       :controls="true"
